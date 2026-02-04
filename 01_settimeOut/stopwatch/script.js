@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let id = null;
 
-  start.addEventListener("click", () => {
+  /*start.addEventListener("click", () => {
     if (id !== null) return; // prevent multiple timers
 
     id = setInterval(() => {
@@ -38,6 +38,35 @@ document.addEventListener("DOMContentLoaded", () => {
   stop.addEventListener("click", () => {
     clearInterval(id);
     id = null;
-  });
+  });*/
+
+  // using setTimeOut
+
+
+  
+  start.addEventListener("click",()=>{
+      id = setTimeout(() => {
+      let s = Number(sec.textContent);
+      let m = Number(min.textContent);
+      let h = Number(hour.textContent);
+
+      s++;
+
+      if (s === 60) {
+        s = 0;
+        m++;
+      }
+
+      if (m === 60) {
+        m = 0;
+        h++;
+      }
+
+      sec.textContent  = (s < 10) ? "0" + s : s;
+      min.textContent  = (m < 10) ? "0" + m : m;
+      hour.textContent = (h < 10) ? "0" + h : h;
+
+    }, 1000);
+  })
 
 });
