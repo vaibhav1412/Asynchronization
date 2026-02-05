@@ -28,3 +28,13 @@ jobPromise.then((result) => {
 }, error =>
     console.error(error)) */
 
+
+// promise states
+
+// pending - outcome is not yet known
+
+// fulfilled - successfull outcome - resolve called
+
+// reject - error/unsuccesfull case - reject called
+
+// settled - outcome is known now - i.e either fulfilled or rejected
